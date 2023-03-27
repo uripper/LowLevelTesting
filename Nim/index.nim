@@ -183,6 +183,16 @@ iterator primeSieve(n: int): int =
         sieve[j] = false  # Mark the multiple of `i` as not prime.
 
 
-for i in primeSieve(1000000):
+for i in primeSieve(1):
     echo i
 echo "-----------------"
+# You can rename functions like echo to print like this:
+import strutils
+
+proc print*(x: varargs[string, `$`]) =
+  for line in x:
+    echo line
+
+print("Hello, World!")
+
+# Nim is kinda cool idk. How safe is it tho?
