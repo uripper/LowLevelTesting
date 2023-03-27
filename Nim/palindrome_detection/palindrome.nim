@@ -1,11 +1,6 @@
 proc reverse (s: string): string =
-    var n: int = 0
-    for i in s:
-        if n > s.len - 1:
-            break
-
-        result = result & s[^(n+1)]
-        n += 1
+    for i in 0..<s.len:
+        result = s[i] & result
 
 proc isPalindrome (s: string): bool =
     return s == reverse(s)
